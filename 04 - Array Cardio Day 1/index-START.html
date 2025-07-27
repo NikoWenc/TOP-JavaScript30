@@ -81,15 +81,15 @@
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
-    // Remove duplicate instances of each of the data in array
-    const deleteClones = data.reduce((accum, item) => {
-      if (!accum.includes(item)) {
-        accum.push(item);
+    const countClones = data.reduce((accum, item) => {
+      if (!accum[item]) {
+        accum[item] = 0;
       }
+      accum[item]++
       return accum;
-    }, [])
+    }, {})
 
-    console.log(deleteClones);
+    console.log(countClones);
 
   </script>
 </body>
